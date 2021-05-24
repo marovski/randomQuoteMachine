@@ -44,7 +44,9 @@ class Card extends Component{
 
         <div id="buttons">
     <button id="tweet-quote" > <a 
-  href={'https://twitter.com/intent/tweet?text=' + '"'+ quote.text +'" ' + quote.author}
+  href={'https://twitter.com/intent/tweet?text=' + 
+  '"'+ quote.text +'" '
+  + "\n" + quote.author}
   data-size="large" target="_blank" rel="noopener noreferrer">
 <i class="fa fa-twitter" aria-hidden="true"></i></a></button>
           <button id="new-quote" onClick={this.generate}>
