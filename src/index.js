@@ -1,17 +1,52 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//Components Import
+
+import Card from './components/card'
+// import NewsList from './components/news_list'
+
+class App extends Component{
+state={
+  isLoaded:false,
+  quotes:[]
+}
+
+componentDidMount() {
+  // var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+  fetch( 'https://type.fit/api/quotes')
+  .then(res => res.json())
+  .then((data) => 
+    this.setState({ quotes: data, isLoaded:true })
+  
+  )
+  .catch(console.log)
+}
+
+  render(){
+    // console.log(this.state.quotes)
+
+    var {isLoaded, quotes}=this.state;
+
+    if(!isLoaded) {
+
+      return <div id="quote-box" ><h1 style={{textAlign:"center"}}>Loading...</h1></div>;
+    }else{
+      return (
+  
+        <div> 
+        <Card quote={quotes}/>
+        {/* <NewsList news={this.state.news} />    */}
+        </div>
+       
+         )
+
+
+    }
+  
+   
+  }
+}
+
+ReactDom.render(<App/>, document.querySelector('#root'))

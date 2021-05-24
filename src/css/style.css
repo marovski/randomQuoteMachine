@@ -1,0 +1,93 @@
+body{
+    margin:0;
+    background: #010614;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+* {
+	box-sizing: border-box;
+}
+
+#quote-box {
+    background-color: #fff;
+    border-radius: 4px;
+    max-width: 450px;
+    margin: 10% auto;
+    position: relative;
+    padding: 34px;
+    color: #444;
+    height: 276px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    
+  }
+
+ #quote-box:hover:before {
+    box-shadow: 0 0 80px #999;
+  }
+ #quote-box h5 {
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    margin-top: -4.5rem;
+    text-align: center;
+    color: white;
+  }
+
+  #text{
+    text-align:center;
+    width:400px;
+    clear:both;
+    font-weight:500;
+    height: 37px; 
+    margin-top: 26%;
+    
+  }
+  #quote-author {
+    text-align: right;
+    width:auto;
+    height:0px;
+    clear:both;
+    
+    font-size:1.1em; 
+   
+  }
+
+  #buttons{
+    float: left;
+  }
+#new-quote{
+    font-size:0.9em;
+
+    overflow: hidden;
+    padding: 0.5rem 0.5rem;
+  
+    background: black;
+    border-radius: 5px;
+    margin: 33px 0;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+#tweet-quote{
+  font-size:0.9em;
+  overflow: hidden;
+  padding: 0.5rem 0.5rem;
+
+  background: black;
+  border-radius: 5px;
+  margin: 33px 0;
+  cursor: pointer;
+  color: #fff;
+ 
+}
+#tweet-quote a{
+  text-decoration: none;
+  color: #fff;
+}
+#quote-box button:hover{
+  opacity: 0.9;
+}
